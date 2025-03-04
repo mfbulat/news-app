@@ -25,38 +25,52 @@ This project follows a simple and minimal folder structure since it's a small ap
 The structure is easy to navigate and keeps concerns separated.
 
 news-app/
-│── public/                 # Public assets
-│── src/                    # Source code
-│   ├── assets/             # Images, fonts, and icons
-│   ├── components/         # Reusable UI components
-│   │   ├── Footer/
-│   │   ├── Header/
-│   │   ├── Navbar/
-│   │   ├── NewsHeader/
-│   │   ├── NewsItem/
-│   │   ├── NewsRow/
-│   │   ├── Portal/
-│   │   ├── Spinner/
-│   ├── hooks/              # Custom React hooks
-│   ├── mocks/              # Mock data for testing
-│   ├── pages/              # Page components
-│   ├── services/           # API calls and external services
-│   ├── store/              # State management (e.g., Redux)
-│   ├── styles/             # Global and component styles
-│   ├── types/              # TypeScript types
-│   ├── utils/              # Helper functions
-│   ├── App.tsx             # Main App component
-│   ├── main.tsx            # Entry point
-│── .env                    # Environment variables
-│── index.html              # Root HTML file
-│── eslint.config.js        # ESLint configuration
-│── .eslintrc.json          # Additional ESLint settings
-│── package.json            # Dependencies and scripts
-│── package-lock.json       # Lockfile for dependencies
-│── tsconfig.app.json       # TypeScript config for app
-│── tsconfig.json           # General TypeScript configuration
-│── tsconfig.node.json      # TypeScript config for Node.js
-│── vite.config.ts          # Vite configuration
+├── public/
+│   └── assets/
+│       ├── fonts/
+│       ├── images/
+├── pages/
+│   ├── home
+│   ├── news
+│   ├── about
+│   ├── 5+ Other pages
+├── src/
+│   ├── assets/
+│   |   ├── images/
+│   |   ├── icons/
+│   ├── components/
+│   |   ├── Footer/
+│   |   ├── Header/
+│   |   ├── Navbar/
+│   |   ├── NewsHeader/
+│   |   ├── NewsItem/
+│   |   ├── NewsRow/
+│   |   ├── Portal/
+│   |   ├── Spinner/
+│   |   └── Includes reusable UI components
+│   ├── hooks/
+│   ├── mocks/
+│   ├── services/
+│   ├── store/
+│   ├── styles/
+│   ├── types/
+│   ├── utils/
+│   |   ├── __api__/
+│   |   |   ├── API functions and requests
+│   ├── App.tsx
+│   ├── main.tsx
+├── .env
+├── .env.local
+├── index.html
+├── eslint.config.js
+├── .eslintrc.json
+├── package.json
+├── package-lock.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── README.md
 
 ---
 
