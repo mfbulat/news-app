@@ -1,54 +1,177 @@
-# React + TypeScript + Vite
+# 📰 News App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile-friendly **React + Redux** news application that displays the latest news articles from the **New York Times API**. 
+The project follows a **test assignment** for the React Developer position at **Ketopay**.
 
-Currently, two official plugins are available:
+### 📌 Test Assignment Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Use React + Redux**
+- ✅ **Use TypeScript**
+- ✅ **Mobile-first design** (Figma layout)
+- ✅ **Load more news articles by date**
+- ✅ **Auto-refresh new articles every 30 seconds**
+- ✅ **Clicking a news article opens the New York Times website**
+- ✅ **No restrictions on third-party libraries**
 
-## Expanding the ESLint configuration
+### 🎨 UI Design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The design mockup is available in **Figma**:  
+🔗 [Figma Link](https://www.figma.com/file/sc2xxWzzgeeFgW7MgMjpYT/Besider---React-тестовое?type=design&node-id=0-1&mode=design&t=U2Y6w3zdzS5bahWf-0)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📂 Folder Structure
+This project follows a simple and minimal folder structure since it's a small application. 
+The structure is easy to navigate and keeps concerns separated.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+news-app/
+│── public/              # Public assets
+│── src/                 # Source code
+│   ├── assets/          # Images, fonts, and icons
+│   ├── components/      # Reusable UI components
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── Navbar/
+│   │   ├── NewsHeader/
+│   │   ├── NewsItem/
+│   │   ├── NewsRow/
+│   │   ├── Portal/
+│   │   ├── Spinner/
+│   ├── hooks/           # Custom React hooks
+│   ├── mocks/           # Mock data for testing
+│   ├── pages/           # Page components
+│   ├── services/        # API calls and external services
+│   ├── store/           # State management (e.g., Redux, Zustand)
+│   ├── styles/          # Global and component styles
+│   ├── types/           # TypeScript types
+│   ├── utils/           # Helper functions
+│   ├── App.tsx          # Main App component
+│   ├── main.tsx         # Entry point
+│── .env                 # Environment variables
+│── index.html           # Root HTML file
+│── eslint.config.js     # ESLint configuration
+│── .eslintrc.json       # Additional ESLint settings
+│── package.json         # Dependencies and scripts
+│── package-lock.json    # Lockfile for dependencies
+│── tsconfig.app.json    # TypeScript config for app
+│── tsconfig.json        # General TypeScript configuration
+│── tsconfig.node.json   # TypeScript config for Node.js
+│── vite.config.ts       # Vite configuration
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Install Dependencies
+
+npm install
+
+### 2️⃣ Run Development Server
+
+npm run dev
+
+### 3️⃣ Build for Production
+
+npm run build
+
+### 4️⃣ Preview Production Build
+
+npm run preview
+
+---
+
+## ⚙️ API Integration
+
+### 📰 New York Times API
+
+The app fetches news from the **New York Times Archive API**:
+
+🔗 [API Documentation](https://developer.nytimes.com/docs/archive-product/1/routes/{year}/{month}.json/get)
+
+Example API request:
+
+https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key=YOUR_API_KEY
+
+Here's an updated **.env** section for the README:
+
+---
+
+## 🔑 Environment Variables
+
+This project requires an **API key** from the **New York Times Archive API**. 
+You can use the default API key or create a `.env.local` file if the default doesn't work.
+
+### ✅ Default API Key
+
+By default, the project uses:
+VITE_API_KEY=vEJwp3nmtqMIO6FDqQwyQdjbTzJcbdAh
+
+### 🔄 Alternative API Key
+
+If the default key doesn’t work, create a `.env.local` file and use:
+VITE_API_KEY=8NvflMwKM5J8uNHxF99ISkNptXyif9h5
+
+Make sure to restart the development server after changing the `.env.local` file:
+
+npm run dev
+
+---
+
+This ensures users know how to configure their environment variables properly. Let me know if you want any changes! 😊🚀
+
+---
+
+## 📦 Dependencies
+
+### ✅ Main Dependencies
+
+| Library               | Version |
+|----------------------|---------|
+| **React**            | ^19.0.0 |
+| **React DOM**        | ^19.0.0 |
+| **React Router DOM** | ^7.2.0  |
+| **Redux Toolkit**    | ^2.6.0  |
+| **React Redux**      | ^9.2.0  |
+| **Axios**            | ^1.8.1  |
+| **Day.js**           | ^1.11.13 |
+| **React Virtualized** | ^9.22.6 |
+| **Sass**             | ^1.85.1 |
+
+### 🛠 Development Dependencies
+
+| Library                 | Purpose |
+|-------------------------|---------|
+| **ESLint**              | Linting |
+| **Prettier**            | Formatting |
+| **TypeScript**          | Type safety |
+| **Vite**                | Build tool |
+| **@reduxjs/toolkit**    | State management |
+| **@types/react**        | TypeScript types for React |
+
+---
+
+## 🎯 Features
+
+- 📱 **Fully responsive** (mobile-first layout)
+- 🔄 **Auto-refresh news every 30 seconds**
+- 📆 **Load more news by date**
+- 🔗 **Click on news to visit New York Times**
+- 🌎 **Optimized performance with React Virtualized**
+- 🚀 **Fast build with Vite + TypeScript**
+- ✅ **Code linting & formatting with ESLint + Prettier**
+
+---
+
+## 🛠 Development
+
+### ✅ Linting
+
+npm run lint
+
+### ✅ Fix Lint Errors
+
+npm run lint:fix
+
+### ✅ Format Code
+
+npm run format
