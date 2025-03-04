@@ -1,0 +1,33 @@
+@mixin title($weight, $size, $line-height) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+.title {
+  @include title(700, 24px, 28.8px);
+}
+
+.title2 {
+  @include title(700, 22px, 26.4px);
+}
+
+.title3 {
+  @include title(700, 18px, 26px);
+}
+
+.title4 {
+  @include title(800, 14px, 16.8px);
+}
+
+.title5 {
+  @include title(400, 16px, 22px);
+}
+
+.caption {
+  @include title(400, 14px, 16.8px);
+}
+
+.caption1 {
+  @include title(400, 12px, 14.4px);
+}

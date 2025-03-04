@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+@import "../../styles/typography.module";
+
+.newsItem {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "empty right"
+    "left bottom-right";
+  column-gap: 16px;
+  row-gap: 8px;
+  padding: 0 0 16px 0;
+  border-bottom: $border-divider;
+  height: 176px;
+}
+
+.newsItem:last-child {
+  border-bottom: none;
+}
+
+.sourceTitle {
+  @extend .title4;
+  grid-area: right;
+  color: $blue-primary;
+}
+
+.imageContainer {
+  grid-area: left;
+}
+
+.itemImage {
+  width: 100%;
+  object-fit: contain;
+}
+
+.itemContent {
+  grid-area: bottom-right;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.itemTitle {
+  @extend .title5;
+}
+
+.itemDate {
+  @extend .caption;
+  color: $grey-light;
+}

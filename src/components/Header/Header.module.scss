@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+@import "../../styles/typography.module";
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: $border-divider;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 20px;
+  width: 100%;
+  max-width: $mobile;
+}
+
+.title {
+  @extend .title;
+  letter-spacing: 4px;
+}
